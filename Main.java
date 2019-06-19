@@ -6,7 +6,7 @@ class Main {
         Coordinate ally = new Coordinate(-1, -1);
         List<Coordinate> enemies = new ArrayList<>();
 
-        // Establish the initial coordinate locations of the ally and the enemies
+        // Nustatome pradines koordinates draugo ir prieso
         for (int i = 0; i < strArr.length; i++) {
             for (int j = 0; j < strArr.length; j++) {
                 if (strArr[j].charAt(i) == '1') {
@@ -17,7 +17,7 @@ class Main {
             }
         }
 
-        // Shift the matrix right and down by one to properly calculate distances
+        // Pajudiname matrica i desine ir apacia kad apskaiciuotume atstumus
         int closestEnemy = Integer.MAX_VALUE;
         int endIndex = strArr.length - 1;
         for (int i = 0; i < endIndex + 1; i++) {
@@ -38,7 +38,7 @@ class Main {
         return (closestEnemy == Integer.MAX_VALUE ? 0 : closestEnemy);
     }
 
-    // Helper class to hold the x,y coordinates of the ally and enemies
+    // Helper classe kuri laiko x ir x koordinates draugo ir prieso
     private static class Coordinate {
         int x;
         int y;
@@ -54,7 +54,7 @@ class Main {
     }
 
     public static void main (String[] args) {
-        // keep this function call here
+    
         Scanner s = new Scanner(System.in);
         System.out.print(ClosestEnemyII(s.nextLine())); // on Intellij something doesnt work with this??? Didn't fix this problem yet :/
 
